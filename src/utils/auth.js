@@ -71,7 +71,6 @@ export const protect = async (req, res, next) => {
       .lean() // convert mongoose object data to raw javascript
       .exec()
     req.user = user
-    next()
   } catch (error) {
     console.log(error)
     return res.status(401).end()
